@@ -1,0 +1,13 @@
+%h1 Welcome
+
+%p this is a guestbook
+
+- if @entries.nil? or @entries.empty?
+  %p No entries!
+- else
+  %ul
+  - @entries.each do |entry|
+    %li=entry.inspect
+
+%p
+  %a{:href => "/comment"} Post new comment
